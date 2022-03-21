@@ -59,15 +59,17 @@ public class PgRoomBookingAppApplication implements CommandLineRunner {
 		System.out.println("Delete Room");
 		roomService.deleteRoom(3);
 
+ 
+
 		// SHOWING Rooms By Room Member
 
 		System.out.println("Get By RoomMember");
-		roomService.getByRoomMember("Devansh");
+		roomService.getByRoomMember("Devansh").forEach(System.out::println);
 
 		// Shwoing ROOMS by RoomSharingTYpe
 
 		System.out.println("Get By RoomSharing Type");
-		roomService.getByRoomSharingType(2).forEach(System.out::println);
+		roomService.getByRoomSharingType(3).forEach(System.out::println);
 
 		// Showing Rooms By Rent
 

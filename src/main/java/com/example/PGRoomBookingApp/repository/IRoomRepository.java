@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface IRoomRepository extends MongoRepository<Room,Integer> {
 
-    List<Room> findByRoomMemberName(String roomMember);
+    List<Room> findByRoomMemberName(String roomMemberName);
 
     List<Room> findByRoomSharingType(Integer roomSharingType);
 
@@ -20,7 +20,7 @@ public interface IRoomRepository extends MongoRepository<Room,Integer> {
 
     List<Room> findByColor(String color);
 
-    @Query("{room:{$lte:?0}}")
+    @Query("{rent:{$lte:?0}}")
     List<Room> findByRent(int rent);
 
 }
