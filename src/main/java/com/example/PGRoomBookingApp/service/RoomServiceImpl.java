@@ -3,6 +3,7 @@ package com.example.PGRoomBookingApp.service;
 import com.example.PGRoomBookingApp.exceptions.RoomNotFound;
 import com.example.PGRoomBookingApp.model.Room;
 import com.example.PGRoomBookingApp.repository.IRoomRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,6 +13,7 @@ public class RoomServiceImpl implements IRoomService{
 
     private IRoomRepository roomRepository;
 
+    @Autowired
     public void setRoomRepository(IRoomRepository roomRepository) {
         this.roomRepository = roomRepository;
     }
