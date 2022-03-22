@@ -27,5 +27,7 @@ public interface IRoomService {
 
     List<Room> getByColor(String color) throws RoomNotFound;
 
+    List<Room> getByBalconyAndWifi(Boolean wifi, Boolean balcony) throws RoomNotFound;
+
 
 }

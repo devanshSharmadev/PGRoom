@@ -1,6 +1,5 @@
 package com.example.PGRoomBookingApp;
 
-import com.example.PGRoomBookingApp.model.Room;
 import com.example.PGRoomBookingApp.service.IRoomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -22,7 +21,7 @@ public class PgRoomBookingAppApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 
 		// ADDING ROOMS
-
+	/*
 		System.out.println("Adding Rooms");
 
 		Room room=new Room("Devansh",1,3,5000,true,true,"Yellow");
@@ -59,7 +58,7 @@ public class PgRoomBookingAppApplication implements CommandLineRunner {
 		System.out.println("Delete Room");
 		roomService.deleteRoom(3);
 
- 
+*/
 
 		// SHOWING Rooms By Room Member
 
@@ -90,6 +89,11 @@ public class PgRoomBookingAppApplication implements CommandLineRunner {
 
 		System.out.println("Get Room by Color");
 		roomService.getByColor("Red").forEach(System.out::println);
+
+		// Get By balcony and WIFI
+
+		System.out.println("Get By balcony and WIFI");
+		roomService.getByBalconyAndWifi(true,true).forEach(System.out::println);
 
 
 

@@ -90,4 +90,13 @@ public class RoomServiceImpl implements IRoomService{
             throw new RoomNotFound("No such Room Exists with this color of wall");
         return rooms;
     }
+
+    @Override
+    public List<Room> getByBalconyAndWifi(Boolean wifi, Boolean balcony) throws RoomNotFound{
+        List<Room> rooms=roomRepository.findByBalcanyAndWifi(wifi,balcony);
+        if(rooms.isEmpty())
+            throw new RoomNotFound("No such room exists with having facility of wifi and balcony both");
+        return rooms;
+    }
+
 }
