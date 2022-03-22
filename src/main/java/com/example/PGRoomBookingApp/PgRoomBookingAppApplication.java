@@ -95,7 +95,10 @@ public class PgRoomBookingAppApplication implements CommandLineRunner {
 		System.out.println("Get By balcony and WIFI");
 		roomService.getByBalconyAndWifi(true,true).forEach(System.out::println);
 
+		// Get by wifi, balcony and lesser rent
 
+		System.out.println("Get by wifi, balcony and lesser rent");
+		roomService.getByWifiBalconyRoomrent(true,true,5000).forEach(System.out::println);
 
 	}
 

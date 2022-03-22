@@ -99,4 +99,12 @@ public class RoomServiceImpl implements IRoomService{
         return rooms;
     }
 
+    @Override
+    public List<Room> getByWifiBalconyRoomrent(Boolean wifi, Boolean balcony, int rent) throws RoomNotFound{
+        List<Room> rooms=roomRepository.findByWifiBalconyRoomrent(wifi,balcony,rent);
+        if(rooms.isEmpty())
+            throw new RoomNotFound("No such room exists with this facilitities");
+        return rooms;
+    }
+
 }

@@ -8,7 +8,9 @@ import java.util.List;
 public interface IRoomService {
 
     void addRoom(Room room);
+
     void updateRoom(Room room);
+
     void deleteRoom(int roomNumber);
 
     List<Room> getAllRooms();
@@ -28,6 +30,8 @@ public interface IRoomService {
     List<Room> getByColor(String color) throws RoomNotFound;
 
     List<Room> getByBalconyAndWifi(Boolean wifi, Boolean balcony) throws RoomNotFound;
+
+    List<Room> getByWifiBalconyRoomrent(Boolean wifi, Boolean balcony,int rent) throws RoomNotFound;
 
 
 }

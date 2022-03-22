@@ -26,4 +26,8 @@ public interface IRoomRepository extends MongoRepository<Room,Integer> {
     @Query("{$and:[{wifi:?0},{balcony:?1}]}")
     List<Room> findByBalcanyAndWifi(Boolean wifi, Boolean balcony);
 
+    @Query("{$or:[{$and:[{wifi:?0},{balcony:?1}]},{rent:{$lte:?2}}]}")
+    List<Room> findByWifiBalconyRoomrent(Boolean wifi, Boolean balcony, int rent);
+
+
 }
